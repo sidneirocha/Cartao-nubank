@@ -1,0 +1,241 @@
+:root {
+--corprincipal: #820AD1;
+--darkpurple: #4b057a;
+--margin-sm: 24rem;
+--margin-md: 48rem;
+--margin-lg: 72rem;
+--margin-xl: 144rem;
+}
+
+body {
+  background-image: url(/bg.png);
+  background-color: black;
+  background-position: center;
+  object-fit: fill;
+  margin: 0px;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0px;
+    gap: 20px;
+}
+
+.cartao-verso {
+  padding:24px 0px 24px 0px;
+  width: 690px;
+  min-width: 400px;
+  height: 374px;
+  min-height: 400px;
+  display: grid;
+  grid-template-areas: "area1 area1 area2"
+                        "blank2 blank2 blank2"
+                        "selo area3 area3"
+                        "area5 area5 area5"
+                        "area6 area6 logo";
+  grid-template-columns: 180px 1fr 160px;
+  grid-template-rows: 32px 100px 120px 1fr 1fr;                      
+  background-image: linear-gradient(to left, white, rgb(177, 177, 177)
+  );
+  border-radius: 20px;
+  }
+
+.blank2 {
+  grid-area: blank2;
+  height: 80px;
+  background-color: gray;
+  padding: 0;
+}
+
+.selo {
+  grid-area: selo;
+  padding:0px 24px 0px 32px;
+}
+
+.text-area1 {
+  grid-area: area1;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding:0px 24px 0px 32px;
+}
+
+.text-area2 {
+  grid-area: area2;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding:0px 24px 0px 24px;
+}
+
+.text-area3 {
+  grid-area: area3;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  justify-content: start;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding:0px 0px 0px 0px;
+}
+
+.text-area4 {
+  grid-area: area4;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding:0px 24px 0px 24px;
+}
+
+.text-area5 {
+  grid-area: area5;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  padding:0px 24px 0px 32px;
+}
+
+.text-area6 {
+  grid-area: area6;
+  display: flex;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  gap: 48px;
+  padding:0px 24px 0px 32px;
+}
+
+.logo {
+  grid-area: logo;
+  padding:0px 24px 0px 24px;
+}
+
+.cartao-frente {
+padding:24px 24px 24px 64px;
+width: 600px;
+min-width: 360px;
+height: 374px;
+min-height: 400px;
+display: grid;
+grid-template-areas: "blank blank master"
+                      "chip chip chip"
+                      "nubank nome nome";
+grid-template-columns: 200px 1fr 120px;
+grid-template-rows: 1fr 1fr 1fr;                      
+background-image: linear-gradient(to left, var(--corprincipal),var(--darkpurple));
+
+border-radius: 20px;
+}
+
+.blank {
+  grid-area: blank;
+}
+
+.master {
+  grid-area: master;
+}
+
+.chip {
+  grid-area: chip;
+}
+
+.nubank {
+  grid-area: nubank;
+}
+
+.nome {
+  grid-area: nome;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 750px) {.cartao-frente {
+  padding:64px 24px 24px 64px;
+  width: 374px;
+  height: 600px;
+  display: grid;
+  margin: 24px;
+  grid-template-areas: "master chip"
+                        "nome nome"
+                        "nubank nubank";
+grid-template-columns: 1fr 130px;
+grid-template-rows: 1fr 1fr 100px;  
+  
+  }
+
+  .chip {
+    grid-area: chip;
+    rotate: 0deg;
+    right: 0px;
+  }}
+
+  @media only screen and (max-width: 450px) {.cartao-frente {
+    padding: 32px;
+    width: 375px;
+    height: auto;
+    display: grid;
+    margin: 24px;
+    grid-template-areas: "chip"
+                          "master"
+                          "nome"
+                          "nubank";
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 100px 100px 1fr;  
+    
+    }
+  
+    .chip {
+      grid-area: chip;
+      rotate: none;
+    }
+    
+    .master{
+      grid-area: master;
+
+    }
+    
+    .nubank {
+      grid-area: nubank;
+      width: 40px;
+    }
+    
+    .nome {
+      grid-area: nome;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: x-large;
+  
+  } }
+
+  @media only screen and (max-width: 750px) {.cartao-verso {
+   
+    padding:24px 0px 24px 0px;
+    rotate: 90deg;
+    width: 690px;
+    min-width: 400px;
+    height: 374px;
+    min-height: 400px;
+    display: grid;
+    grid-template-areas: "area1 area1 area2"
+                          "blank2 blank2 blank2"
+                             "selo area3 area3"
+                           "area5 area5 area5"
+                             "area6 area6 logo";
+grid-template-columns: 180px 1fr 160px;
+grid-template-rows: 32px 100px 120px 1fr 1fr;    
+    
+    }
+  
+    .chip {
+      grid-area: chip;
+      rotate: 0deg;
+      right: 0px;
+    }}
